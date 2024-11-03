@@ -56,7 +56,8 @@ RUN mkdir -p /var/log/letsencrypt && \
 RUN mkdir -p /usr/share/nginx/html/.well-known/acme-challenge && \
     chown -R nginx /usr/share/nginx/html/.well-known/acme-challenge && \
     chmod 775 /usr/share/nginx/html/.well-known/acme-challenge
- 
+
+RUN sed -i.bak 's#dl-cdn.alpinelinux.org#mirrors.aliyun.com#g' /etc/apk/repositories
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* 
 RUN update-ca-certificates
 RUN apk add --no-cache certbot certbot-nginx
