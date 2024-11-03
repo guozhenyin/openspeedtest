@@ -11,8 +11,8 @@ ENV CONFIG=/etc/nginx/conf.d/OpenSpeedTest-Server.conf
 ENV INDEX_HTML=/usr/share/nginx/html/index.html
 
 ENV CHANGE_CONTAINER_PORTS=false
-ENV HTTP_PORT=3000
-ENV HTTPS_PORT=3001
+ENV HTTP_PORT=80
+ENV HTTPS_PORT=443
 ENV SET_USER=101
 
 COPY /files/OpenSpeedTest-Server.conf ${CONFIG}
